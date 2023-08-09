@@ -170,7 +170,7 @@ function findWin(win, frameElement) {
   const length = Function.prototype.call.call(getLength, win);
   for (let i = 0; i < length; i++) {
     if (isCrossOrigin(win[i], win)) {
-      continue;
+      return null;
     }
     if (getFrameElement(win[i]) === frameElement) {
       return win[i];
